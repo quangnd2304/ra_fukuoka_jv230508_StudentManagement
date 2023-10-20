@@ -22,6 +22,7 @@
         <th>Age</th>
         <th>BirthDate</th>
         <th>Status</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -32,9 +33,14 @@
                 <td>${student.age}</td>
                 <td><fmt:formatDate pattern="dd/MM/yyyy" value="${student.birthDate}"/></td>
                 <td>${student.status?"Active":"Inactive"}</td>
+                <td>
+                    <a href="<%=request.getContextPath()%>/StudentController?action=initUpdate&&studentId=${student.studentId}">Update</a>
+                    <a href="<%=request.getContextPath()%>/StudentController?action=delete&&studentId=${student.studentId}">Delete</a>
+                </td>
             </tr>
         </c:forEach>
     </tbody>
 </table>
+<a href="views/newStudent.jsp">Create New Student</a>
 </body>
 </html>

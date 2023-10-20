@@ -19,4 +19,24 @@ public class StudentServiceImp implements IStudentService {
     public List<Student> getAllStudent() {
         return studentRepository.getAllStudent();
     }
+
+    @Override
+    public boolean createStudent(Student student) {
+        return studentRepository.createStudent(student);
+    }
+
+    @Override
+    public Student getStudentById(int studentId) {
+        return studentRepository.getStudentById(studentId);
+    }
+
+    @Override
+    public boolean updateStudent(Student student) {
+        return studentRepository.updateStudent(student);
+    }
+
+    @Override
+    public boolean deleteStudent(int studentId) {
+        return studentRepository.deleteStudent(studentId);
+    }
 }
